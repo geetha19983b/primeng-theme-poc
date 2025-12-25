@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "primeicons/primeicons.css";
+
+:root {
+  --card-border: 1px solid var(--p-surface-200);
+  --card-bg: var(--p-surface-0);
+  
+}
+body {
+  font-family: Nunito Sans, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}

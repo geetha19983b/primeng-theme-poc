@@ -1,6 +1,4 @@
-<p-button label="Go to login" />
-
-<div class="btn-container">
+<div class="card flex flex-wrap gap-4 justify-center">
   <p-button label="Primary" />
   <p-button label="Secondary" severity="secondary" />
   <p-button label="Success" severity="success" />
@@ -12,9 +10,7 @@
   <p-button label="Primary-Outlined" variant="outlined" />
 </div>
 
-<hr />
-
-<div class="card flex justify-center">
+<div class="card flex">
   <p-buttongroup>
     @for(year of years; track year) {
     <p-button
@@ -22,12 +18,8 @@
       [severity]="activeYear !== year ? 'secondary' : 'primary'"
       size="small"
       (onClick)="setActiveYear(year)"
-       [pt]="activeYear !== year ? secondaryButtonPT : {}"
+      [pt]="activeYear !== year ? secondaryButtonPT : {}"
     />
     }
   </p-buttongroup>
 </div>
-
-<hr/>
-
-  <p-button label="Another secondary" severity="secondary" />
