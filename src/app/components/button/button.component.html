@@ -1,13 +1,33 @@
 <p-button label="Go to login" />
 
 <div class="btn-container">
-    <p-button label="Primary" />
-    <p-button label="Secondary" severity="secondary" />
-    <p-button label="Success" severity="success" />
-    <p-button label="Info" severity="info" />
-    <p-button label="Warn" severity="warn" />
-    <p-button label="Help" severity="help" />
-    <p-button label="Danger" severity="danger" />
-    <p-button label="Contrast" severity="contrast" />
-    <p-button label="Primary-Outlined" variant="outlined" />
+  <p-button label="Primary" />
+  <p-button label="Secondary" severity="secondary" />
+  <p-button label="Success" severity="success" />
+  <p-button label="Info" severity="info" />
+  <p-button label="Warn" severity="warn" />
+  <p-button label="Help" severity="help" />
+  <p-button label="Danger" severity="danger" />
+  <p-button label="Contrast" severity="contrast" />
+  <p-button label="Primary-Outlined" variant="outlined" />
 </div>
+
+<hr />
+
+<div class="card flex justify-center">
+  <p-buttongroup>
+    @for(year of years; track year) {
+    <p-button
+      [label]="year"
+      [severity]="activeYear !== year ? 'secondary' : 'primary'"
+      size="small"
+      (onClick)="setActiveYear(year)"
+       [pt]="activeYear !== year ? secondaryButtonPT : {}"
+    />
+    }
+  </p-buttongroup>
+</div>
+
+<hr/>
+
+  <p-button label="Another secondary" severity="secondary" />
