@@ -28,16 +28,6 @@ export const DNVPreset = definePreset(Aura, {
           hoverColor: '{primary.600}',
           activeColor: '{primary.700}',
         },
-        // Change the ENTIRE surface to follow light blue brand
-        // surface: {
-        //   50: '#e9f7fc', // Page Ground
-        //   100: '#d3eef8', // Section/Detail Header
-        // },
-        // 4. FORM FIELD FOCUS & HOVER
-        // formField: {
-        //   hoverBorderColor: '#2196f3',
-        //   focusBorderColor: '#2196f3',
-        // },
         surface: {
           0: '#ffffff', // --surface-0
           50: '#fafafa', // --surface-50
@@ -52,6 +42,13 @@ export const DNVPreset = definePreset(Aura, {
           900: '#212121', // --surface-900
           950: '#1a1a1a',
         },
+        // 1. Redirect global highlights to use your gray scale
+        highlight: {
+          background: '#f8f9fa', // This is your rgb(248, 249, 250)
+          focusBackground: '#e9ecef', // A slightly darker gray for keyboard focus
+          color: '{surface.900}', // Dark text on the light gray background
+          focusColor: '{surface.900}',
+        },
         formField: {
           borderColor: '#cbcac8', // exact border color
           hoverBorderColor: '#bdbdbd', // Darker gray on hover
@@ -61,6 +58,18 @@ export const DNVPreset = definePreset(Aura, {
           background: '#ffffff',
           hoverBackground: '#e9ecef', // --surface-hover
           selectedBackground: 'rgba(33, 150, 243, 0.06)', // --highlight-bg
+        },
+        list: {
+          option: {
+            // 2. Ensure list items use the new highlight logic
+            focusBackground: '{surface.100}',
+            //selectedBackground: '{highlight.background}', // Points to #f8f9fa
+            //selectedColor: '{surface.900}',
+
+            // 3. Hover state (not selected)
+            color: '{surface.700}',
+            focusColor: '{surface.900}',
+          },
         },
       },
     },
@@ -77,5 +86,10 @@ export const DNVPreset = definePreset(Aura, {
         },
       },
     },
+    progressbar: {
+        value: {
+            background: '#2196f1',
+        }
+    }
   },
 });
